@@ -34,6 +34,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -67,7 +68,7 @@ fun AnadirView(navegante: NavHostController = rememberNavController(),
 
                     )
 
-                    Text("Lista",
+                    Text(stringResource(R.string.nav_lista),
                         color = Color.White,
                         fontSize = 24.sp)
 
@@ -82,12 +83,13 @@ fun AnadirView(navegante: NavHostController = rememberNavController(),
 
                     )
 
-                    Text("Añadir",
+                    Text(stringResource(R.string.nav_anadir),
                         color = Color.White,
                         fontSize = 20.sp)
 
                 }
-                Column(verticalArrangement = Arrangement.Center,horizontalAlignment = Alignment.CenterHorizontally) {
+                Column(verticalArrangement = Arrangement.Center,horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.clickable{navegante.navigate(route = Configuracion)}
+                ){
                     Image(
                         painter = painterResource(id = R.drawable.outline_airwave_24),
                         contentDescription = null,
@@ -96,7 +98,7 @@ fun AnadirView(navegante: NavHostController = rememberNavController(),
 
                     )
 
-                    Text("Config.",
+                    Text(stringResource(R.string.nav_config),
                         color = Color.White,
                         fontSize = 24.sp)
 
@@ -112,7 +114,7 @@ fun AnadirView(navegante: NavHostController = rememberNavController(),
         {
             Row() {
                 Text(
-                    "Añadir",
+                    stringResource(R.string.titulo_anadir),
                     fontSize = 48.sp,
                     color = Color.White
                 )
@@ -140,7 +142,7 @@ fun AnadirView(navegante: NavHostController = rememberNavController(),
                     ) {
                         Spacer(Modifier.height(36.dp))
                         Text(
-                            text = "Nuevo Medicamento",
+                            text = stringResource(R.string.nuevo_medicamento),
                             fontSize = 36.sp,
                             color = Color.White
                         )
@@ -148,7 +150,7 @@ fun AnadirView(navegante: NavHostController = rememberNavController(),
 
                         Row(horizontalArrangement = Arrangement.Center, verticalAlignment = Alignment.CenterVertically) {
                             Text(
-                                text = "Nombre:",
+                                text = stringResource(R.string.nombre),
                                 fontSize = 28.sp,
                                 color = Color.White
                             )
@@ -156,7 +158,7 @@ fun AnadirView(navegante: NavHostController = rememberNavController(),
                             TextField(
                                 value = nombre,
                                 onValueChange = { nuevoTexto -> nombre = nuevoTexto },
-                                label = { Text("Escribe aquí") },
+                                label = { Text(nombre) },
                                 modifier = Modifier.height(30.dp)
 
                             )
@@ -169,7 +171,7 @@ fun AnadirView(navegante: NavHostController = rememberNavController(),
 
                         Row(horizontalArrangement = Arrangement.Center, verticalAlignment = Alignment.CenterVertically) {
                             Text(
-                                text = "Una dosis cada:",
+                                text = stringResource(R.string.una_dosis_cada),
                                 fontSize = 20.sp,
                                 color = Color.White
                             )
@@ -177,12 +179,12 @@ fun AnadirView(navegante: NavHostController = rememberNavController(),
                             TextField(
                                 value = horas,
                                 onValueChange = { nuevoTexto -> horas = nuevoTexto },
-                                label = { Text("Escribe aquí") },
+                                label = { Text(horas) },
                                 modifier = Modifier.width(150.dp).height(30.dp)
                             )
 
                             Text(
-                                text = "Horas",
+                                text = stringResource(R.string.horas),
                                 fontSize = 20.sp,
                                 color = Color.White
                             )
@@ -191,7 +193,7 @@ fun AnadirView(navegante: NavHostController = rememberNavController(),
                         Spacer(Modifier.height(36.dp))
                         Row(horizontalArrangement = Arrangement.Center, verticalAlignment = Alignment.CenterVertically) {
                             Text(
-                                text = "Empiezo con lo suficiente para",
+                                text = stringResource(R.string.empiezo_con),
                                 fontSize = 24.sp,
                                 color = Color.White
                             )
@@ -201,13 +203,13 @@ fun AnadirView(navegante: NavHostController = rememberNavController(),
                             TextField(
                                 value = dosis,
                                 onValueChange = { nuevoTexto -> dosis = nuevoTexto },
-                                label = { Text("Escribe aquí", color = Color.White) },
+                                label = { Text(dosis) },
                                 modifier = Modifier.width(150.dp).height(30.dp),
                                 textStyle = androidx.compose.ui.text.TextStyle(color = Color.White)
                             )
 
                             Text(
-                                text = "dosis",
+                                text = stringResource(R.string.dosis),
                                 fontSize = 24.sp,
                                 color = Color.White
                             )
@@ -236,7 +238,7 @@ fun AnadirView(navegante: NavHostController = rememberNavController(),
                                 contentColor = Color.Black
                             )
                         ) {
-                            Text("Confirmar")
+                            Text(stringResource(R.string.confirmar))
                         }
 
                         Spacer(Modifier.height(36.dp))

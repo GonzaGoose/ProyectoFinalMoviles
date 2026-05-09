@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -31,6 +32,8 @@ import com.example.projectofinalmoviles.R
 
 fun ListaView(navegante: NavHostController = rememberNavController(),
               viewModel: MedicamentosViewModel) {
+    AlarmaDialog(viewModel)
+
     Scaffold(
         bottomBar = {
             Row(Modifier.fillMaxWidth()
@@ -51,7 +54,7 @@ fun ListaView(navegante: NavHostController = rememberNavController(),
 
                     )
 
-                    Text("Lista",
+                    Text(stringResource(R.string.nav_lista),
                         color = Color.White,
                         fontSize = 20.sp)
 
@@ -69,12 +72,14 @@ fun ListaView(navegante: NavHostController = rememberNavController(),
 
                     )
 
-                    Text("Añadir",
+                    Text(stringResource(R.string.nav_anadir),
                         color = Color.White,
                         fontSize = 24.sp)
 
                 }
-                Column(verticalArrangement = Arrangement.Center,horizontalAlignment = Alignment.CenterHorizontally) {
+                Column(verticalArrangement = Arrangement.Center,horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = Modifier.clickable{navegante.navigate(route = Configuracion)}
+                    ) {
                     Image(
                         painter = painterResource(id = R.drawable.outline_airwave_24),
                         contentDescription = null,
@@ -83,7 +88,7 @@ fun ListaView(navegante: NavHostController = rememberNavController(),
 
                     )
 
-                    Text("Config.",
+                    Text(stringResource(R.string.nav_config),
                         color = Color.White,
                         fontSize = 24.sp)
 
@@ -99,21 +104,21 @@ fun ListaView(navegante: NavHostController = rememberNavController(),
         {
             Row() {
                 Text(
-                    "Lista",
+                    stringResource(R.string.titulo_lista),
                     fontSize = 48.sp,
                     color = Color.White
                 )
             }
             if (viewModel.medicamentos.isEmpty()) {
                 Text(
-                    text = "No hay medicamentos agregados",
+                    text = stringResource(R.string.no_medicamentos),
                     color = Color.White,
                     fontSize = 20.sp,
                     modifier = Modifier.padding(16.dp)
                 )
             } else {
                 viewModel.medicamentos.forEach { medicamento ->
-                    CardAlarma(medicamento = medicamento)
+                    CardAlarma(medicamento = medicamento, viewModel = viewModel)
                 }
         }
 

@@ -1,3 +1,50 @@
 <resources>
     <string name="app_name">ProjectoFinalMoviles</string>
+
+
+    <string name="nav_lista">Lista</string>
+    <string name="nav_anadir">Añadir</string>
+    <string name="nav_config">Config.</string>
+
+
+    <string name="titulo_lista">Lista</string>
+    <string name="no_medicamentos">No hay medicamentos agregados</string>
+
+
+    <string name="titulo_anadir">Añadir</string>
+    <string name="nuevo_medicamento">Nuevo Medicamento</string>
+    <string name="nombre">Nombre:</string>
+    <string name="una_dosis_cada">Una dosis cada:</string>
+    <string name="horas">Horas</string>
+    <string name="empiezo_con">Empiezo con lo suficiente para</string>
+    <string name="dosis">dosis</string>
+    <string name="confirmar">Confirmar</string>
+
+
+    <string name="cada">Cada</string>
+    <string name="dosis_restantes">dosis restantes</string>
+    <string name="completado">¡COMPLETADO!</string>
+    <string name="siguiente_dosis_en">Siguiente dosis en</string>
+    <string name="tratamiento_finalizado">Tratamiento finalizado</string>
+    <string name="tomar_dosis">Tomar dosis</string>
+    <string name="eliminar">Eliminar</string>
+
+
+    <string name="titulo_config">Configuración</string>
+    <string name="config_alarma">Configuración de Alarma</string>
+    <string name="sonido_alarma">Sonido de Alarma</string>
+    <string name="volumen_alarma">Volumen de Alarma</string>
+    <string name="probar_sonido">Probar Sonido</string>
+    <string name="restablecer">Restablecer</string>
+
+
+    <string name="eliminar_medicamento">Eliminar medicamento</string>
+    <string name="confirmar_eliminar">¿Estás seguro de que quieres eliminar "%s"?</string>
+
+
+    <string name="alarma_titulo">¡Hora de tomar medicamento!</string>
+    <string name="medicamento">Medicamento:</string>
+    <string name="dosis_restantes_texto">Dosis restantes:</string>
+    <string name="tomar_ahora">✓ Tomar ahora</string>
+    <string name="posponer">✗ Posponer</string>
 </resources>
